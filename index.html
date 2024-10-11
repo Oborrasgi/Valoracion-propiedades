@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <title>Valoración de Propiedades - ECO 805</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Valoración de Propiedades</h1>
+        <p>Realiza una valoración precisa siguiendo los criterios de la norma ECO 805.</p>
+    </header>
+    <main>
+        <form id="valoracion-form">
+            <section>
+                <h2>Información del Propietario</h2>
+                <input type="text" placeholder="Nombre" required>
+                <input type="text" placeholder="Apellidos" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Teléfono" required>
+            </section>
+            <section>
+                <h2>Detalles de la Propiedad</h2>
+                <label for="fotoInicial">Foto inicial del inmueble:</label>
+                <input type="file" accept="image/*" id="fotoInicial" required>
+                <input type="number" placeholder="Precio de mercado (P)" required>
+                <input type="number" placeholder="Superficie total (m²)" required>
+                <input type="number" placeholder="M² de terraza">
+                <input type="number" placeholder="Antigüedad del piso (A)">
+                <input type="number" placeholder="Altura del piso (H)">
+                <select>
+                    <option>¿Tiene ascensor?</option>
+                    <option>Sí</option>
+                    <option>No</option>
+                </select>
+                <input type="number" placeholder="Número de habitaciones (R)" required>
+                <input type="number" placeholder="Número de WC (W)" required>
+                <input type="number" placeholder="Número de aseos (A)">
+                <select>
+                    <option>Necesidad de reforma?</option>
+                    <option>Sí</option>
+                    <option>No</option>
+                </select>
+                <input type="text" placeholder="Estado de conservación y acabados" required>
+            </section>
+            <section>
+                <h2>Testigos de Comparación</h2>
+
+                <div class="testigo">
+                    <h3>Testigo 1</h3>
+                    <input type="text" placeholder="Fuente del Testigo 1" required>
+                    <input type="text" placeholder="URL del Testigo 1" required>
+                    <input type="number" placeholder="Precio de mercado (P1)" required>
+                    <input type="number" placeholder="Superficie total (m²) (S1)" required>
+                    <input type="number" placeholder="M² de terraza (T1)">
+                    <input type="number" placeholder="Antigüedad del piso (A1)">
+                    <input type="number" placeholder="Altura del piso (H1)">
+                    <select>
+                        <option>¿Tiene ascensor?</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+                    <input type="number" placeholder="Número de habitaciones (R1)" required>
+                    <input type="number" placeholder="Número de WC (W1)" required>
+                    <input type="number" placeholder="Número de aseos (A1)">
+                    <select>
+                        <option>Necesidad de reforma?</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+                </div>
+    
+                <div class="testigo">
+                    <h3>Testigo 2</h3>
+                    <input type="text" placeholder="Fuente del Testigo 2" required>
+                    <input type="text" placeholder="URL del Testigo 2" required>
+                    <input type="number" placeholder="Precio de mercado (P2)" required>
+                    <input type="number" placeholder="Superficie total (m²) (S2)" required>
+                    <input type="number" placeholder="M² de terraza (T2)">
+                    <input type="number" placeholder="Antigüedad del piso (A2)">
+                    <input type="number" placeholder="Altura del piso (H2)">
+                    <select>
+                        <option>¿Tiene ascensor?</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+                    <input type="number" placeholder="Número de habitaciones (R2)" required>
+                    <input type="number" placeholder="Número de WC (W2)" required>
+                    <input type="number" placeholder="Número de aseos (A2)">
+                    <select>
+                        <option>Necesidad de reforma?</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+                </div>
+    
+                <div class="testigo">
+                    <h3>Testigo 3</h3>
+                    <input type="text" placeholder="Fuente del Testigo 3" required>
+                    <input type="text" placeholder="URL del Testigo 3" required>
+                    <input type="number" placeholder="Precio de mercado (P3)" required>
+                    <input type="number" placeholder="Superficie total (m²) (S3)" required>
+                    <input type="number" placeholder="M² de terraza (T3)">
+                    <input type="number" placeholder="Antigüedad del piso (A3)">
+                    <input type="number" placeholder="Altura del piso (H3)">
+                    <select>
+                        <option>¿Tiene ascensor?</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+                    <input type="number" placeholder="Número de habitaciones (R3)" required>
+                    <input type="number" placeholder="Número de WC (W3)" required>
+                    <input type="number" placeholder="Número de aseos (A3)">
+                    <select>
+                        <option>Necesidad de reforma?</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+                </div>
+    
+                <div class="testigo">
+                    <h3>Testigo 4</h3>
+                    <input type="text" placeholder="Fuente del Testigo 4" required>
+                    <input type="text" placeholder="URL del Testigo 4" required>
+                    <input type="number" placeholder="Precio de mercado (P4)" required>
+                    <input type="number" placeholder="Superficie total (m²) (S4)" required>
+                    <input type="number" placeholder="M² de terraza (T4)">
+                    <input type="number" placeholder="Antigüedad del piso (A4)">
+                    <input type="number" placeholder="Altura del piso (H4)">
+                    <select>
+                        <option>¿Tiene ascensor?</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+                    <input type="number" placeholder="Número de habitaciones (R4)" required>
+                    <input type="number" placeholder="Número de WC (W4)" required>
+                    <input type="number" placeholder="Número de aseos (A4)">
+                    <select>
+                        <option>Necesidad de reforma?</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+                </div>
+    
+                <div class="testigo">
+                    <h3>Testigo 5</h3>
+                    <input type="text" placeholder="Fuente del Testigo 5" required>
+                    <input type="text" placeholder="URL del Testigo 5" required>
+                    <input type="number" placeholder="Precio de mercado (P5)" required>
+                    <input type="number" placeholder="Superficie total (m²) (S5)" required>
+                    <input type="number" placeholder="M² de terraza (T5)">
+                    <input type="number" placeholder="Antigüedad del piso (A5)">
+                    <input type="number" placeholder="Altura del piso (H5)">
+                    <select>
+                        <option>¿Tiene ascensor?</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+                    <input type="number" placeholder="Número de habitaciones (R5)" required>
+                    <input type="number" placeholder="Número de WC (W5)" required>
+                    <input type="number" placeholder="Número de aseos (A5)">
+                    <select>
+                        <option>Necesidad de reforma?</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+                </div>
+    
+                <div class="testigo">
+                    <h3>Testigo 6</h3>
+                    <input type="text" placeholder="Fuente del Testigo 6" required>
+                    <input type="text" placeholder="URL del Testigo 6" required>
+                    <input type="number" placeholder="Precio de mercado (P6)" required>
+                    <input type="number" placeholder="Superficie total (m²) (S6)" required>
+                    <input type="number" placeholder="M² de terraza (T6)">
+                    <input type="number" placeholder="Antigüedad del piso (A6)">
+                    <input type="number" placeholder="Altura del piso (H6)">
+                    <select>
+                        <option>¿Tiene ascensor?</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+                    <input type="number" placeholder="Número de habitaciones (R6)" required>
+                    <input type="number" placeholder="Número de WC (W6)" required>
+                    <input type="number" placeholder="Número de aseos (A6)">
+                    <select>
+                        <option>Necesidad de reforma?</option>
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+                </div>
+    
+            </section>
+            <section>
+                <h2>Fotos del Inmueble</h2>
+                <label for="fotosInmueble">Sube hasta 10 fotos del inmueble a valorar:</label>
+                <input type="file" accept="image/*" id="fotosInmueble" multiple required>
+            </section>
+            <button type="submit">Calcular Valoración</button>
+        </form>
+        <div id="resultados" style="display:none;">
+            <h2>Resultados de la Valoración</h2>
+            <p>Esta valoración se ha realizado siguiendo los criterios de la norma ECO 805.</p>
+            <div id="resumen"></div>
+            <canvas id="myChart" width="400" height="200"></canvas>
+            <button id="exportar-pdf">Exportar Informe</button>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Rescuer Property Capital</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
